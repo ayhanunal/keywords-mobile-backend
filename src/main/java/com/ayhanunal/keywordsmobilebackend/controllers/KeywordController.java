@@ -19,7 +19,7 @@ public class KeywordController {
     @Autowired
     KeywordService keywordService;
 
-    @GetMapping(value = "/keywords")
+    @GetMapping(value = "/allwords")
     public Keyword getAllKeywords() {
         return keywordService.getAllKeywords();
     }
