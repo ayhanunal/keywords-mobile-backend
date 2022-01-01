@@ -34,4 +34,8 @@ public class KeywordService {
         return keyword;
     }
 
+    public Word enterWord(Word data){
+        return keywordRepository.save(data);
+    }
+
 }
