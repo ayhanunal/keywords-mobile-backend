@@ -35,4 +35,11 @@ public class KeywordController {
         return keywordService.enterWord(data);
     }
 
+    @GetMapping(value = "/deleteword")
+    public void deleteKeyword(
+            @RequestParam("delete") int deletedWordIX
+    ){
+        keywordService.deleteWord(deletedWordIX);
+    }
+
 }

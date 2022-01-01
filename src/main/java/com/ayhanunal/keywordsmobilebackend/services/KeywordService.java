@@ -38,4 +38,8 @@ public class KeywordService {
         return keywordRepository.save(data);
     }
 
+    public void deleteWord(int data){
+        keywordRepository.deleteById(data);
+    }
+
 }
