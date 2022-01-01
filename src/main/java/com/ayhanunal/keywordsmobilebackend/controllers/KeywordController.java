@@ -5,6 +5,7 @@ import com.ayhanunal.keywordsmobilebackend.services.KeywordService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -22,6 +23,13 @@ public class KeywordController {
     @GetMapping(value = "/allwords")
     public Keyword getAllKeywords() {
         return keywordService.getAllKeywords();
+    }
+
+    @GetMapping(value = "/words")
+    public Keyword searchKeyword(
+        @RequestParam("search") String searchedWord
+    ){
+        return keywordService.searchKeyword(searchedWord);
     }
 
 }

@@ -24,4 +24,14 @@ public class KeywordService {
         return keyword;
     }
 
+    public Keyword searchKeyword(String searchedWord){
+        Keyword keyword = new Keyword();
+
+        List<Word> wordList = keywordRepository.searchWords(searchedWord);
+        keyword.setWordCount(wordList.size());
+        keyword.setWords(wordList);
+
+        return keyword;
+    }
+
 }
