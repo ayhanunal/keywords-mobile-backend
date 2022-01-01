@@ -1,5 +1,7 @@
 package com.ayhanunal.keywordsmobilebackend.models.entity;
 
+import com.ayhanunal.keywordsmobilebackend.util.WordLevels;
+
 import javax.persistence.*;
 
 @Entity
@@ -39,8 +41,15 @@ public class Word {
         this.tr = tr;
     }
 
-    public int getLevel() {
-        return level;
+    public WordLevels getLevel() {
+        WordLevels wordLevels;
+        switch (level){
+            case 2: wordLevels = WordLevels.MEDIUM; break;
+            case 3: wordLevels = WordLevels.HARD; break;
+            default:
+                wordLevels = WordLevels.EASY; break;
+        }
+        return wordLevels;
     }
 
     public void setLevel(int level) {
